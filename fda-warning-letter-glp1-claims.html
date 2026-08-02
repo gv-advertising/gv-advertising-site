@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two sentences on a website. One FDA warning letter. — GV Advertising</title>
+<meta name="description" content="In September 2025 the FDA cited two specific claims on hims.com. Neither was about the medication. Both were about the copy. Here is the exact language, the statute behind it, and what to write instead.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2EFE9;
+  --ink:#111110;
+  --ink-soft:#4A4844;
+  --rule:#CFCabF;
+  --flag:#C8102E;
+  --clear:#1F7A4D;
+  --dark:#0E0E0C;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'IBM Plex Sans',system-ui,sans-serif;
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+
+/* ---------- masthead ---------- */
+.masthead{border-bottom:1px solid var(--rule);padding:22px 0}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.logo{
+  font-family:'Big Shoulders Display',sans-serif;
+  font-weight:800;font-size:26px;letter-spacing:.02em;
+  text-decoration:none;color:var(--ink);
+}
+.logo span{color:var(--flag)}
+.file-no{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);
+}
+
+/* ---------- article head ---------- */
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--flag);
+  padding-bottom:14px;
+}
+h1{
+  font-family:'Big Shoulders Display',sans-serif;
+  font-weight:800;line-height:.93;letter-spacing:-.005em;
+  font-size:clamp(42px,7.4vw,74px);
+  text-transform:uppercase;
+  padding-bottom:20px;
+}
+h1 em{font-style:normal;color:var(--flag)}
+.standfirst{font-size:20px;line-height:1.5;color:var(--ink-soft);max-width:60ch}
+.byline{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);
+  border-top:1px solid var(--rule);margin-top:34px;padding-top:14px;
+}
+article{padding:56px 0 0}
+
+/* ---------- body ---------- */
+.body{padding:38px 0 0}
+.body p{padding-bottom:20px;max-width:66ch}
+h2{
+  font-family:'Big Shoulders Display',sans-serif;
+  font-weight:600;text-transform:uppercase;
+  font-size:clamp(26px,3.6vw,34px);line-height:1.05;
+  letter-spacing:.01em;
+  padding:26px 0 14px;
+}
+.body a{color:var(--flag);text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- exhibit: the redline ---------- */
+.exhibit{
+  border:1px solid var(--ink);
+  background:#FBFAF7;
+  margin:34px 0 40px;
+}
+.exhibit-head{
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;
+  letter-spacing:.16em;text-transform:uppercase;
+  border-bottom:1px solid var(--ink);
+  padding:11px 18px;
+  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+}
+.cols{display:grid;grid-template-columns:1fr 1fr}
+.col{padding:20px 18px 22px}
+.col + .col{border-left:1px solid var(--rule)}
+.col-label{
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;
+  letter-spacing:.13em;text-transform:uppercase;
+  padding-bottom:12px;
+}
+.col-flag .col-label{color:var(--flag)}
+.col-clear .col-label{color:var(--clear)}
+.struck{text-decoration:line-through;text-decoration-color:var(--flag);text-decoration-thickness:2px;color:var(--flag)}
+.kept{color:var(--clear);font-weight:500}
+.note{
+  font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.55;
+  color:var(--ink-soft);padding-top:14px;
+}
+@media(max-width:640px){
+  .cols{grid-template-columns:1fr}
+  .col + .col{border-left:0;border-top:1px solid var(--rule)}
+}
+
+/* ---------- statute pull ---------- */
+.statute{
+  border-left:3px solid var(--flag);
+  padding:4px 0 4px 20px;
+  margin:12px 0 30px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:14px;line-height:1.6;color:var(--ink-soft);
+  max-width:62ch;
+}
+.statute strong{color:var(--ink);font-weight:500}
+
+/* ---------- checklist ---------- */
+ol.rules{list-style:none;counter-reset:r;padding:6px 0 20px}
+ol.rules li{
+  counter-increment:r;
+  border-top:1px solid var(--rule);
+  padding:18px 0 18px 46px;position:relative;max-width:66ch;
+}
+ol.rules li:last-child{border-bottom:1px solid var(--rule)}
+ol.rules li::before{
+  content:counter(r,decimal-leading-zero);
+  position:absolute;left:0;top:18px;
+  font-family:'IBM Plex Mono',monospace;font-size:12px;
+  color:var(--flag);letter-spacing:.08em;
+}
+ol.rules b{font-weight:600}
+
+/* ---------- CTA ---------- */
+.cta{background:var(--dark);color:#F7F5F0;margin-top:60px;padding:64px 0 68px}
+.cta h2{color:#fff;padding-top:0;font-weight:800;font-size:clamp(30px,5vw,46px)}
+.cta p{color:#B9B5AC;max-width:56ch;padding-bottom:26px}
+.btn{
+  display:inline-block;background:var(--flag);color:#fff;
+  font-family:'IBM Plex Mono',monospace;font-size:12.5px;
+  letter-spacing:.14em;text-transform:uppercase;
+  padding:17px 26px;text-decoration:none;
+  border:1px solid var(--flag);
+}
+.btn:hover{background:#A50D25;border-color:#A50D25}
+.cta-mail{
+  font-family:'IBM Plex Mono',monospace;font-size:13px;
+  color:#B9B5AC;padding-top:18px;
+}
+.cta-mail a{color:#B9B5AC}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--rule);padding:30px 0 46px}
+.disclaimer{
+  font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.7;
+  color:var(--ink-soft);max-width:74ch;padding-top:14px;
+}
+.sources{font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.9;padding-top:6px}
+.sources a{color:var(--ink-soft)}
+:focus-visible{outline:2px solid var(--flag);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="logo" href="/">GV<span>/</span>ADVERTISING</a>
+    <div class="file-no">File No. GVA-2026 &nbsp;·&nbsp; Regulated health marketing</div>
+  </div>
+</header>
+
+<article>
+  <div class="wrap">
+    <div class="eyebrow">Exhibit B — FDA Warning Letter 716567 · 09 Sep 2025</div>
+    <h1>Two sentences on a website. <em>One FDA warning letter.</em></h1>
+    <p class="standfirst">Neither sentence was about the medication. Both were about the copy. If you sell compounded GLP-1s, the same two sentences are probably on your site right now.</p>
+    <div class="byline">GV Advertising · Regulated health marketing</div>
+  </div>
+
+  <div class="wrap body">
+
+    <p>In August 2025 the FDA read the Hims &amp; Hers website. It was not an inspection of a pharmacy, a facility, or a batch record. It was somebody at the agency reading marketing copy the same way a customer would.</p>
+
+    <p>On September 9 the agency sent a warning letter. It quoted two claims, verbatim, off the page. The first was the line telling shoppers the product contained the <strong>same active ingredient as Ozempic and Wegovy</strong>. The second described the ingredients as clinically proven.</p>
+
+    <p>Both sentences are, in a narrow chemical sense, defensible. That is exactly why they are dangerous, and why so many clinics have written some version of them without a second thought.</p>
+
+    <h2>Why true was not good enough</h2>
+
+    <p>The mechanism is a labeling statute, not an advertising one. Under the Federal Food, Drug, and Cosmetic Act a drug is misbranded if its labeling is false or misleading in any particular — and a separate provision extends that same test to the advertising and promotion of a compounded drug.</p>
+
+    <div class="statute">
+      21 U.S.C. § 352(a) — <strong>misbranded if labeling is false or misleading in any particular.</strong><br>
+      21 U.S.C. § 352(bb) — <strong>a compounded drug is misbranded if its advertising or promotion is false or misleading in any particular.</strong><br>
+      Introducing a misbranded drug into interstate commerce is a prohibited act under § 331(a).
+    </div>
+
+    <p>Read that second line again, because it is the whole ballgame. For a compounded product, your ad copy is not separate from the drug. Your ad copy is <em>part of the drug's regulatory status</em>. A marketing sentence can misbrand a medication.</p>
+
+    <p>The agency's reasoning on the Hims claims was short. Compounded drug products are not FDA-approved. Copy that draws an equivalence to an approved product implies the compounded version carries an approval it does not have. The claim does not have to be chemically wrong to be misleading — it only has to leave the reader believing something untrue.</p>
+
+    <h2>The redline</h2>
+
+    <p>Here is the same commercial idea, written two ways. The version on the left drew a federal letter. The version on the right sells the same benefit and says nothing the agency cited.</p>
+
+    <div class="exhibit">
+      <div class="exhibit-head">
+        <span>Exhibit B — Landing page copy</span>
+        <span>Reviewed 2026 · GV Advertising</span>
+      </div>
+      <div class="cols">
+        <div class="col col-flag">
+          <div class="col-label">As published — cited by FDA</div>
+          <p class="struck">Same active ingredient as Ozempic and Wegovy.</p>
+          <p class="struck">Clinically proven ingredients.</p>
+          <p class="note">Both claims imply an approval the compounded product does not hold. Equivalence to an approved drug is the specific inference the agency named.</p>
+        </div>
+        <div class="col col-clear">
+          <div class="col-label">After redline — runs clean</div>
+          <p class="kept">A compounded medication, prepared for you by a licensed pharmacy and prescribed only if a provider determines it is appropriate.</p>
+          <p class="kept">Compounded medications are not FDA-approved. Results vary by patient.</p>
+          <p class="note">Kept: the convenience, the provider oversight, the personalization. Dropped: every word that borrows credibility from a brand-name approval.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>This was not a one-off</h2>
+
+    <p>The Hims letter arrived inside a wave. The FDA sent roughly fifty letters that same week to companies marketing compounded GLP-1 products, part of a broader push against direct-to-consumer drug advertising announced days earlier.</p>
+
+    <p>Then it escalated. On March 3, 2026 the agency publicly released thirty more warning letters, this batch aimed squarely at telehealth companies and online wellness clinics making false or misleading claims about compounded GLP-1s. Days later, Novo Nordisk and Hims &amp; Hers announced a partnership under which Hims sells branded, FDA-approved product and stops most of its compounded advertising.</p>
+
+    <p>Read the sequence honestly. The largest, best-resourced player in the category took two letters and then changed its business model. A single-location clinic does not have that option, which makes getting the copy right the first time the cheaper path by a wide margin.</p>
+
+    <h2>Three rules that cover most of the exposure</h2>
+
+    <ol class="rules">
+      <li><b>Never draw an equivalence to a brand-name drug.</b> Not the molecule, not the mechanism, not the results. The moment a reader could conclude your product is the approved one, the claim is misleading regardless of chemistry.</li>
+      <li><b>Never borrow a trial.</b> "Clinically proven" and study statistics belong to the approved product that ran the study. Citing them for a compounded preparation transfers an approval you do not have.</li>
+      <li><b>State what the product actually is.</b> Compounded, not FDA-approved, dispensed only on a prescription after a provider review, results vary. This is not a legal disclaimer buried in the footer — written well, it is the trust argument that separates you from the gray-market sellers.</li>
+    </ol>
+
+    <p>None of this requires softer marketing. The Hims letter did not object to the offer, the price, the speed, or the convenience. It objected to two sentences that reached for someone else's approval.</p>
+
+  </div>
+</article>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Bring me one ad. I will tell you what is wrong with it.</h2>
+    <p>Thirty minutes, no charge, no obligation. You leave with a written list of the lines in your current marketing that would draw a flag — and why. If you never hire me, you still fix the lines.</p>
+    <a class="btn" href="https://cal.com/gv-advertising/compliance-review">Book the compliance review</a>
+    <div class="cta-mail"><a href="mailto:gary@gv-adv.com?subject=Compliance%20review%20request">gary@gv-adv.com</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="sources">
+      Sources — FDA Warning Letter 716567, Hims &amp; Hers Health, Inc. dba Hims, 09/09/2025 ·
+      FDA Warning Letter 716825, dba Hers, 09/09/2025 ·
+      21 U.S.C. §§ 331(a), 352(a), 352(bb)
+    </div>
+    <p class="disclaimer">
+      GV Advertising is a marketing services firm. It is not a law firm and does not provide legal, medical or regulatory advice. Enforcement matters referenced on this page are publicly reported actions by the U.S. Food and Drug Administration against the named companies; they are cited as illustrations of published enforcement priorities and do not imply any relationship between those companies and GV Advertising. Nothing on this page should be relied upon as a prediction of how any regulator or advertising platform will treat a particular campaign. Clients remain responsible for their own regulatory compliance and should obtain independent legal review of their advertising.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You are not a hospital. That did not save GoodRx or BetterHelp. — GV Advertising</title>
+<meta name="description" content="Two FTC actions in five weeks, $9.3 million total, over tracking pixels on intake pages. Neither company was covered by HIPAA. Here is where the pixel goes and where it does not.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2EFE9;
+  --ink:#111110;
+  --ink-soft:#4A4844;
+  --rule:#CFCabF;
+  --flag:#C8102E;
+  --clear:#1F7A4D;
+  --dark:#0E0E0C;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:'IBM Plex Sans',system-ui,sans-serif;
+  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.masthead{border-bottom:1px solid var(--rule);padding:22px 0}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.logo{font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:26px;letter-spacing:.02em;text-decoration:none;color:var(--ink)}
+.logo span{color:var(--flag)}
+.file-no{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--flag);padding-bottom:14px}
+h1{font-family:'Big Shoulders Display',sans-serif;font-weight:800;line-height:.93;letter-spacing:-.005em;font-size:clamp(42px,7.4vw,74px);text-transform:uppercase;padding-bottom:20px}
+h1 em{font-style:normal;color:var(--flag)}
+.standfirst{font-size:20px;line-height:1.5;color:var(--ink-soft);max-width:60ch}
+.byline{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);border-top:1px solid var(--rule);margin-top:34px;padding-top:14px}
+article{padding:56px 0 0}
+.body{padding:38px 0 0}
+.body p{padding-bottom:20px;max-width:66ch}
+h2{font-family:'Big Shoulders Display',sans-serif;font-weight:600;text-transform:uppercase;font-size:clamp(26px,3.6vw,34px);line-height:1.05;letter-spacing:.01em;padding:26px 0 14px}
+.body a{color:var(--flag);text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- docket: the two cases ---------- */
+.docket{border-top:1px solid var(--ink);margin:30px 0 40px}
+.case{border-bottom:1px solid var(--rule);padding:20px 0;display:grid;grid-template-columns:132px 1fr;gap:22px}
+.case:last-child{border-bottom:1px solid var(--ink)}
+.case-meta{font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.7;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
+.case-fine{display:block;font-size:22px;letter-spacing:0;color:var(--flag);font-weight:500;padding-bottom:4px}
+.case-body p{padding-bottom:10px;max-width:none}
+.case-body p:last-child{padding-bottom:0}
+.case-name{font-weight:600}
+@media(max-width:600px){.case{grid-template-columns:1fr;gap:10px}}
+
+/* ---------- exhibit ---------- */
+.exhibit{border:1px solid var(--ink);background:#FBFAF7;margin:34px 0 40px}
+.exhibit-head{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid var(--ink);padding:11px 18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.cols{display:grid;grid-template-columns:1fr 1fr}
+.col{padding:20px 18px 22px}
+.col + .col{border-left:1px solid var(--rule)}
+.col-label{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;padding-bottom:12px}
+.col-flag .col-label{color:var(--flag)}
+.col-clear .col-label{color:var(--clear)}
+.line{font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.7;padding-bottom:9px}
+.line.bad{color:var(--flag);text-decoration:line-through;text-decoration-thickness:2px}
+.line.good{color:var(--clear)}
+.note{font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.55;color:var(--ink-soft);padding-top:10px}
+@media(max-width:640px){.cols{grid-template-columns:1fr}.col + .col{border-left:0;border-top:1px solid var(--rule)}}
+
+.pull{border-left:3px solid var(--flag);padding:4px 0 4px 20px;margin:14px 0 30px;font-size:19px;line-height:1.5;max-width:60ch}
+ol.rules{list-style:none;counter-reset:r;padding:6px 0 20px}
+ol.rules li{counter-increment:r;border-top:1px solid var(--rule);padding:18px 0 18px 46px;position:relative;max-width:66ch}
+ol.rules li:last-child{border-bottom:1px solid var(--rule)}
+ol.rules li::before{content:counter(r,decimal-leading-zero);position:absolute;left:0;top:18px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--flag);letter-spacing:.08em}
+ol.rules b{font-weight:600}
+
+.cta{background:var(--dark);color:#F7F5F0;margin-top:60px;padding:64px 0 68px}
+.cta h2{color:#fff;padding-top:0;font-weight:800;font-size:clamp(30px,5vw,46px)}
+.cta p{color:#B9B5AC;max-width:56ch;padding-bottom:26px}
+.btn{display:inline-block;background:var(--flag);color:#fff;font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;padding:17px 26px;text-decoration:none;border:1px solid var(--flag)}
+.btn:hover{background:#A50D25;border-color:#A50D25}
+.cta-mail{font-family:'IBM Plex Mono',monospace;font-size:13px;color:#B9B5AC;padding-top:18px}
+.cta-mail a{color:#B9B5AC}
+footer{border-top:1px solid var(--rule);padding:30px 0 46px}
+.disclaimer{font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.7;color:var(--ink-soft);max-width:74ch;padding-top:14px}
+.sources{font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.9;padding-top:6px}
+.sources a{color:var(--ink-soft)}
+:focus-visible{outline:2px solid var(--flag);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="logo" href="/">GV<span>/</span>ADVERTISING</a>
+    <div class="file-no">File No. GVA-2026 &nbsp;·&nbsp; Regulated health marketing</div>
+  </div>
+</header>
+
+<article>
+  <div class="wrap">
+    <div class="eyebrow">Exhibit C — FTC v. GoodRx · FTC v. BetterHelp · 2023</div>
+    <h1>You are not a hospital. <em>That did not save them.</em></h1>
+    <p class="standfirst">Two FTC actions, five weeks apart, $9.3 million between them. Neither company was covered by HIPAA. Both were undone by tracking code sitting on an intake page.</p>
+    <div class="byline">GV Advertising · Regulated health marketing</div>
+  </div>
+
+  <div class="wrap body">
+
+    <p>Almost every clinic owner I speak to believes the same thing: HIPAA applies to doctors and hospitals, and a marketing pixel is a marketing problem, not a legal one.</p>
+
+    <p>The FTC spent early 2023 dismantling that assumption. It did not need HIPAA. It used its own authority, and it went after the exact setup that sits on most clinic websites right now — a plug-and-play pixel dropped on every page, including the pages where patients answer questions about their bodies.</p>
+
+    <div class="docket">
+      <div class="case">
+        <div class="case-meta">
+          <span class="case-fine">$1.5M</span>
+          Feb 1, 2023<br>Civil penalty<br>16 C.F.R. Part 318
+        </div>
+        <div class="case-body">
+          <p class="case-name">FTC v. GoodRx Holdings</p>
+          <p>The first enforcement action ever brought under the Health Breach Notification Rule — a rule on the books since 2009 that had never been used. The agency alleged GoodRx used off-the-shelf tracking pixels and SDKs that handed identifiable health information to Facebook, Google and Criteo, after telling users in its own privacy policy that it would never share health information with advertisers.</p>
+          <p>The order carried a remedy the FTC had never imposed before: a flat prohibition on sharing user health data with third parties for advertising, permanently.</p>
+        </div>
+      </div>
+      <div class="case">
+        <div class="case-meta">
+          <span class="case-fine">$7.8M</span>
+          Mar 2, 2023<br>Consumer refunds<br>FTC Act § 5
+        </div>
+        <div class="case-body">
+          <p class="case-name">FTC v. BetterHelp</p>
+          <p>The agency alleged the online therapy company disclosed email addresses, IP addresses and intake questionnaire answers to Facebook, Snapchat, Pinterest and Criteo for advertising. In one stretch it allegedly handed Facebook lists of over seven million email addresses; Facebook matched more than four million of them to real accounts and targeted those people and lookalikes.</p>
+          <p>The $7.8 million went back to consumers — the first time the FTC returned money directly to people whose health data was exposed.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>The part that should stop you cold</h2>
+
+    <p>In the BetterHelp matter the FTC took the position that a consumer's email address was itself health information — not because the email contained anything medical, but because of where it came from. Anyone receiving it could tell the owner had been seeking mental health services. Context made ordinary data into health data.</p>
+
+    <div class="pull">Translate that to your clinic. The email address of someone who just completed a weight-loss intake is not a lead record. In the FTC's framing, it is health information about that person.</div>
+
+    <p>That single move is what puts a med spa in the same category as a telehealth platform. You do not have to transmit a diagnosis. You only have to transmit an identifier from a page whose subject matter is obvious.</p>
+
+    <h2>Where the pixel goes, and where it does not</h2>
+
+    <p>None of this means running without tracking. It means the tracking stops at the door of the clinical conversation. Here is the difference between a setup that would draw a look and one that would not.</p>
+
+    <div class="exhibit">
+      <div class="exhibit-head">
+        <span>Exhibit C — Pixel placement</span>
+        <span>Reviewed 2026 · GV Advertising</span>
+      </div>
+      <div class="cols">
+        <div class="col col-flag">
+          <div class="col-label">Typical install — exposed</div>
+          <div class="line bad">Pixel on every page, sitewide</div>
+          <div class="line bad">Fires on /semaglutide-intake</div>
+          <div class="line bad">Advanced matching sends email + phone</div>
+          <div class="line bad">Event: "GLP1_QuestionnaireComplete"</div>
+          <div class="line bad">URL: /intake?condition=weight-loss</div>
+          <p class="note">Every line above ties a real person to a health context and hands it to an ad platform. Two of them do it in plain text, inside the event name and the URL.</p>
+        </div>
+        <div class="col col-clear">
+          <div class="col-label">After redline — runs clean</div>
+          <div class="line good">Pixel on marketing pages only</div>
+          <div class="line good">Stops before the intake step</div>
+          <div class="line good">No email or phone in matching</div>
+          <div class="line good">Event: "Lead" — generic, no condition</div>
+          <div class="line good">URL: /start — no query parameters</div>
+          <p class="note">You still measure what an ad produced. What you stop sending is the pairing of a named person with the medical reason they showed up.</p>
+        </div>
+      </div>
+    </div>
+
+    <p>The event name and the URL matter more than people expect. Both travel to the ad platform as text. A campaign structure organized around condition names is a written record of who came looking for what.</p>
+
+    <h2>Three questions worth answering this week</h2>
+
+    <ol class="rules">
+      <li><b>Does your privacy policy already promise something you are not doing?</b> Both cases turned on the gap between the promise and the code. GoodRx's policy said health information would never go to advertisers. That sentence became the violation. Read your own policy against your actual tag setup before anyone else does.</li>
+      <li><b>Where exactly does the pixel stop firing?</b> Not "we have a pixel" — the specific page. If the answer is that it runs everywhere because that is the default install, it is running on your intake.</li>
+      <li><b>Who at your practice decided what gets sent to Meta?</b> In the BetterHelp complaint the FTC pointed out the decision sat with someone with almost no marketing training. Nobody sets out to leak health data. It leaks because the decision was never really made by anyone.</li>
+    </ol>
+
+    <p>The cost of getting this right is an afternoon of tag configuration. The cost of getting it wrong is a civil penalty, a permanent prohibition on how you advertise, and the letter that tells your patients what happened.</p>
+
+  </div>
+</article>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Bring me one ad. I will tell you what is wrong with it.</h2>
+    <p>Thirty minutes, no charge, no obligation. I will look at your ads, your landing page and where your tracking fires, and send you a written list of what would draw a flag — and why. If you never hire me, you still fix the lines.</p>
+    <a class="btn" href="https://cal.com/gv-advertising/compliance-review">Book the compliance review</a>
+    <div class="cta-mail"><a href="mailto:gary@gv-adv.com?subject=Compliance%20review%20request">gary@gv-adv.com</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="sources">
+      Sources — FTC press release, enforcement action against GoodRx Holdings Inc., 01 Feb 2023 ·
+      FTC press release, final order re BetterHelp, Inc., 2023 ·
+      Health Breach Notification Rule, 16 C.F.R. Part 318 ·
+      Section 5, FTC Act
+    </div>
+    <p class="disclaimer">
+      GV Advertising is a marketing services firm. It is not a law firm and does not provide legal, medical or regulatory advice. Enforcement matters referenced on this page are publicly reported actions by the U.S. Federal Trade Commission against the named companies; they are cited as illustrations of published enforcement priorities and do not imply any relationship between those companies and GV Advertising. Nothing on this page should be relied upon as a prediction of how any regulator or advertising platform will treat a particular campaign. Clients remain responsible for their own regulatory compliance and should obtain independent legal review of their advertising and their data practices.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
