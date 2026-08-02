@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — GV Advertising</title>
+<meta name="description" content="Support the work behind GV Advertising.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f7f5f0; --paper-2:#efece4; --ink:#14140f; --ink-soft:#4a4a42;
+  --rule:#c9c4b6; --red:#c8102e; --green:#0f7b3d; --green-soft:rgba(15,123,61,.09);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:'IBM Plex Sans',system-ui,sans-serif;
+  font-size:17px; line-height:1.62; -webkit-font-smoothing:antialiased;
+  min-height:100vh; display:flex; flex-direction:column;
+}
+body::before{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
+  background-image:linear-gradient(var(--rule) 1px,transparent 1px);
+  background-size:100% 34px; opacity:.18;
+}
+.wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:0 28px;width:100%}
+.filebar{border-bottom:2px solid var(--ink);background:var(--paper)}
+.filebar .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
+.brand{font-family:'Big Shoulders Display',sans-serif;font-size:26px;font-weight:900;letter-spacing:.02em;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+.brand span{color:var(--red)}
+.filemeta{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft)}
+main{flex:1;display:flex;align-items:center;padding:56px 0}
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--red);
+  display:flex;align-items:center;gap:12px;margin-bottom:22px;
+}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+h1{font-family:'Big Shoulders Display',sans-serif;font-size:clamp(42px,8vw,72px);font-weight:900;line-height:.96;text-transform:uppercase;margin-bottom:20px}
+h1 em{font-style:normal;color:var(--green)}
+p{color:var(--ink-soft);max-width:58ch}
+p+p{margin-top:14px}
+.card{
+  margin-top:34px;background:#fff;border:2px solid var(--ink);
+  box-shadow:7px 7px 0 var(--ink);padding:28px 26px;
+}
+.card .line{
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:18px;
+}
+.amount{font-family:'Big Shoulders Display',sans-serif;font-size:44px;font-weight:900;line-height:1;margin-bottom:6px}
+.amount small{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-top:6px}
+.btn{
+  display:block;text-align:center;background:var(--green);color:#fff;
+  font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;
+  letter-spacing:.11em;text-transform:uppercase;text-decoration:none;
+  padding:16px 24px;border:2px solid var(--green);margin-top:20px;transition:.15s;
+}
+.btn:hover{background:var(--ink);border-color:var(--ink)}
+.fine{
+  margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;
+  line-height:1.7;color:var(--ink-soft);
+}
+.fine b{color:var(--ink)}
+footer{padding:26px 0;border-top:1px solid var(--rule)}
+footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;color:var(--ink-soft)}
+footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+</style>
+</head>
+<body>
+
+<div class="filebar">
+  <div class="wrap">
+    <a class="brand" href="/">GV<span>/</span>ADVERTISING</a>
+    <div class="filemeta">Appendix S · Support</div>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+    <div class="eyebrow">Appendix S — Voluntary contribution</div>
+    <h1>Back the <em>work</em>.</h1>
+    <p>GV Advertising publishes redlines, breakdowns and free compliance reviews so operators in regulated health can market without collecting warning letters. If any of it saved you a flag, a rejected ad or an expensive mistake, you can chip in here.</p>
+    <p>Entirely optional. It changes nothing about client work or pricing — it just keeps the free material coming.</p>
+
+    <div class="card">
+      <div class="line"><span>Contribution — one-time</span><span>No. GVA-S-01</span></div>
+      <div class="amount">You choose<small>Suggested: $25 · any amount works</small></div>
+      <a class="btn" href="https://buy.stripe.com/00w9AMcXzfirb4h7aYgUM00">Contribute securely via Stripe →</a>
+      <p class="fine"><b>Processed by Stripe.</b> Card, Cash App and wallet payments accepted. A receipt is emailed to you automatically. Contributions are voluntary payments to GV Advertising, not charitable donations, and are not tax-deductible.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>GV Advertising</div>
+    <div><a href="/">← Back to gv-adv.com</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
