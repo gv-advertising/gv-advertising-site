@@ -66,6 +66,21 @@ body::before{
 .mono{font-family:'IBM Plex Mono',ui-monospace,monospace}
 h1,h2,h3,.display{font-family:'Big Shoulders Display',Impact,sans-serif;line-height:.94;letter-spacing:-.01em;text-transform:uppercase}
 
+/* ---------- announcement bar ---------- */
+.announce{
+  border-bottom:2px solid var(--ink);background:var(--paper-2);
+  font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.6;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft);
+}
+.announce .wrap{padding-top:9px;padding-bottom:9px;text-align:center}
+.announce strong{color:var(--red);font-weight:600}
+.announce a{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1px solid var(--red);white-space:nowrap}
+.announce a:hover{color:var(--red)}
+@media(max-width:560px){
+  .announce{letter-spacing:.01em;text-transform:none;line-height:1.5}
+  .announce .wrap{padding-left:14px;padding-right:14px}
+}
+
 /* ---------- top bar ---------- */
 .filebar{
   border-bottom:2px solid var(--ink);background:var(--paper);
@@ -253,6 +268,11 @@ footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rul
 </style>
 </head>
 <body>
+
+<!-- ============ ANNOUNCEMENT BAR ============ -->
+<div class="announce">
+  <div class="wrap">FDA issued <strong>55+</strong> warning letters to telehealth and aesthetic practices in 2026. Most cite the same five phrases. <a href="#pricing">&rarr; See if yours do</a></div>
+</div>
 
 <!-- ============ FILE BAR ============ -->
 <div class="filebar">
