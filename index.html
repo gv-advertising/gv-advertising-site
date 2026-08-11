@@ -250,6 +250,40 @@ footer .row{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
 footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
 .disclaimer{margin-top:20px;font-size:11px;line-height:1.75;max-width:88ch;color:#7a766c}
 
+/* ---------- the 5 phrases ---------- */
+.phrases{display:grid;gap:0;border:2px solid var(--ink);background:#fff;margin-top:34px}
+.phrase{padding:26px 24px}
+.phrase+.phrase{border-top:1px solid var(--rule)}
+.phrase-no{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+.phrase-line{
+  font-family:'Big Shoulders Display',Impact,sans-serif;text-transform:uppercase;
+  font-size:clamp(28px,5.2vw,40px);font-weight:800;line-height:1.02;
+  color:var(--red);text-decoration:line-through;text-decoration-thickness:3px;
+  background:var(--red-soft);padding:2px 6px;display:inline-block;
+}
+.phrase-why{margin-top:14px;font-size:16.5px;color:var(--ink-soft);max-width:60ch}
+.tt-slot{margin-top:20px;min-height:120px}
+.tt-slot .tt-facade{
+  width:100%;border:2px dashed var(--rule);background:var(--paper-2);color:var(--ink);
+  font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.11em;
+  text-transform:uppercase;padding:22px 16px;cursor:pointer;text-align:left;
+}
+.tt-slot .tt-facade:hover{border-color:var(--red);color:var(--red)}
+.tt-slot blockquote.tiktok-embed{margin:0!important;max-width:325px}
+.phrases-foot{
+  display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:30px;
+}
+.phrases-foot .src{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-soft)}
+@media(min-width:900px){
+  .phrases{
+    grid-template-columns:repeat(5,minmax(392px,1fr));
+    overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;
+  }
+  .phrase{scroll-snap-align:start}
+  .phrase+.phrase{border-top:none;border-left:1px solid var(--rule)}
+  .phrase-line{font-size:30px}
+}
+
 /* ---------- TODO markers (delete before publishing) ---------- */
 .todo{
   background:#fff3b0;color:#5c4a00;border:1px dashed #b8860b;
@@ -365,6 +399,54 @@ footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rul
       <h3>The certification problem</h3>
       <p>If you are pursuing or holding LegitScript certification, your public-facing marketing is part of the review. Ad copy written without that in mind can undo months of paperwork.</p>
     </div>
+  </div>
+</section>
+</div>
+
+<!-- ============ THE 5 PHRASES ============ -->
+<div class="wrap" id="five-phrases">
+<section>
+  <div class="eyebrow">Exhibit B — The wording regulators quote back to you</div>
+  <h2>The 5 Phrases</h2>
+  <p class="lead">The exact wording that triggered 55 FDA warning letters in 2026.</p>
+
+  <div class="phrases">
+    <div class="phrase">
+      <div class="phrase-no">Phrase 01</div>
+      <div class="phrase-line">&ldquo;Same active ingredient as [brand]&rdquo;</div>
+      <p class="phrase-why">The #1 trigger. The FDA cited MEDVi's site word-for-word for this exact comparison.</p>
+      <div class="tt-slot" data-part="1"></div>
+    </div>
+    <div class="phrase">
+      <div class="phrase-no">Phrase 02</div>
+      <div class="phrase-line">&ldquo;Generic&rdquo;</div>
+      <p class="phrase-why">There is no FDA-approved generic semaglutide. Calling a compound 'generic' is misbranding.</p>
+      <div class="tt-slot" data-part="2"></div>
+    </div>
+    <div class="phrase">
+      <div class="phrase-no">Phrase 03</div>
+      <div class="phrase-line">Your own logo on the product label</div>
+      <p class="phrase-why">Not a phrase — an image. Your brand on the vial photo suggests you're the manufacturer.</p>
+      <div class="tt-slot" data-part="3"></div>
+    </div>
+    <div class="phrase">
+      <div class="phrase-no">Phrase 04</div>
+      <div class="phrase-line">&ldquo;FDA-approved&rdquo;</div>
+      <p class="phrase-why">The adjective contaminates whatever it touches — even 'FDA-approved active ingredient' drew letters.</p>
+      <div class="tt-slot" data-part="4"></div>
+    </div>
+    <div class="phrase">
+      <div class="phrase-no">Phrase 05</div>
+      <div class="phrase-line">&ldquo;Clinically proven&rdquo;</div>
+      <p class="phrase-why">Five words, no brand named — still a warning letter. Borrowed efficacy is the stealth trigger.</p>
+      <div class="tt-slot" data-part="5"></div>
+    </div>
+  </div>
+
+  <div class="phrases-foot">
+    <a class="btn" href="https://cal.com/gv-advertising/compliance-review">Book a Compliance Review</a>
+    <span class="src">Sources: FDA warning letters, public record. Not legal advice.</span>
+    <noscript><span class="src">Videos: <a href="https://www.tiktok.com/@gvadvertising" target="_blank" rel="noopener">tiktok.com/@gvadvertising</a></span></noscript>
   </div>
 </section>
 </div>
@@ -656,6 +738,97 @@ footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rul
   </p>
 </footer>
 </div>
+
+<!-- ============ THE 5 PHRASES — video embeds ============ -->
+<script>
+(function(){
+  /* Single source of truth: Part number -> video URL. Swap these to change the videos. */
+  var VIDEOS={
+    1:'https://www.tiktok.com/@gvadvertising/video/7672151710441196813',
+    2:'https://www.tiktok.com/@gvadvertising/video/7672152288693177613',
+    3:'https://www.tiktok.com/@gvadvertising/video/7672152636161887501',
+    4:'https://www.tiktok.com/@gvadvertising/video/7672153005642337550',
+    5:'https://www.tiktok.com/@gvadvertising/video/7672153395028839693'
+  };
+  var slots=[].slice.call(document.querySelectorAll('.tt-slot'));
+  if(!slots.length)return;
+  var scriptLoaded=false;
+  var embedsBuilt=false;
+
+  function handle(url){
+    var m=url.match(/@([^\/]+)\/video\//);
+    return m?m[1]:'gvadvertising';
+  }
+  function videoId(url){
+    var m=url.match(/\/video\/(\d+)/);
+    return m?m[1]:'';
+  }
+  function facade(slot,part){
+    var b=document.createElement('button');
+    b.type='button';
+    b.className='tt-facade';
+    b.textContent='▶ Play Part '+part+' of 5 on TikTok';
+    b.addEventListener('click',function(){build(slot);loadScript()});
+    slot.appendChild(b);
+  }
+  function build(slot){
+    var part=slot.getAttribute('data-part');
+    var url=VIDEOS[part];
+    if(!url||slot.querySelector('blockquote'))return;
+    var id=videoId(url);
+    if(!id)return;
+    var user=handle(url);
+    slot.innerHTML='';
+    var bq=document.createElement('blockquote');
+    bq.className='tiktok-embed';
+    bq.setAttribute('cite',url);
+    bq.setAttribute('data-video-id',id);
+    bq.style.maxWidth='325px';
+    bq.style.minWidth='288px';
+    var sec=document.createElement('section');
+    var a=document.createElement('a');
+    a.target='_blank';a.rel='noopener';a.title='@'+user;
+    a.href='https://www.tiktok.com/@'+user+'?refer=embed';
+    a.textContent='Part '+part+' of 5 — @'+user;
+    sec.appendChild(a);
+    bq.appendChild(sec);
+    slot.appendChild(bq);
+  }
+  function buildAll(){
+    if(embedsBuilt)return;
+    embedsBuilt=true;
+    slots.forEach(build);
+  }
+  function loadScript(){
+    if(scriptLoaded)return;
+    scriptLoaded=true;
+    var s=document.createElement('script');
+    s.src='https://www.tiktok.com/embed.js';
+    s.async=true;
+    document.body.appendChild(s);
+  }
+
+  slots.forEach(function(slot){
+    var part=slot.getAttribute('data-part');
+    if(VIDEOS[part])facade(slot,part);
+  });
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting)return;
+        io.disconnect();
+        buildAll();
+        loadScript();
+      });
+    },{rootMargin:'200px 0px'});
+    io.observe(document.getElementById('five-phrases'));
+  }else{
+    buildAll();
+    loadScript();
+  }
+})();
+</script>
 
 <script>
 (function(){
