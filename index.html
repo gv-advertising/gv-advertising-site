@@ -262,13 +262,27 @@ footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rul
   background:var(--red-soft);padding:2px 6px;display:inline-block;
 }
 .phrase-why{margin-top:14px;font-size:16.5px;color:var(--ink-soft);max-width:60ch}
-.tt-slot{margin-top:20px;min-height:120px}
-.tt-slot .tt-facade{
-  width:100%;border:2px dashed var(--rule);background:var(--paper-2);color:var(--ink);
-  font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.11em;
-  text-transform:uppercase;padding:22px 16px;cursor:pointer;text-align:left;
+.tt-slot{margin-top:20px}
+.tt-facade{
+  display:block;position:relative;width:100%;max-width:325px;aspect-ratio:3/4;
+  padding:0;border:2px solid var(--ink);background:var(--paper-2);cursor:pointer;overflow:hidden;
 }
-.tt-slot .tt-facade:hover{border-color:var(--red);color:var(--red)}
+.tt-facade img{width:100%;height:100%;object-fit:cover;display:block}
+.tt-facade .tt-play{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+}
+.tt-facade .tt-play span{
+  width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);
+  border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;
+  font-size:22px;line-height:1;color:var(--ink);padding-left:4px;
+}
+.tt-facade:hover .tt-play span{background:#fff;border-color:var(--red);color:var(--red)}
+.tt-facade .tt-label{
+  position:absolute;left:0;right:0;bottom:0;background:rgba(17,17,17,.86);color:#fff;
+  font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.11em;
+  text-transform:uppercase;padding:9px 10px;text-align:left;
+}
+.tt-facade:focus-visible{outline:3px solid var(--red);outline-offset:2px}
 .tt-slot blockquote.tiktok-embed{margin:0!important;max-width:325px}
 .phrases-foot{
   display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:30px;
@@ -742,18 +756,17 @@ footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rul
 <!-- ============ THE 5 PHRASES — video embeds ============ -->
 <script>
 (function(){
-  /* Single source of truth: Part number -> video URL. Swap these to change the videos. */
+  /* Single source of truth: Part number -> video URL + poster. Swap these to change the videos. */
   var VIDEOS={
-    1:'https://www.tiktok.com/@gvadvertising/video/7672151710441196813',
-    2:'https://www.tiktok.com/@gvadvertising/video/7672152288693177613',
-    3:'https://www.tiktok.com/@gvadvertising/video/7672152636161887501',
-    4:'https://www.tiktok.com/@gvadvertising/video/7672153005642337550',
-    5:'https://www.tiktok.com/@gvadvertising/video/7672153395028839693'
+    1:{url:'https://www.tiktok.com/@gvadvertising/video/7672151710441196813',cover:'assets/five-phrases/part-1.webp'},
+    2:{url:'https://www.tiktok.com/@gvadvertising/video/7672152288693177613',cover:'assets/five-phrases/part-2.webp'},
+    3:{url:'https://www.tiktok.com/@gvadvertising/video/7672152636161887501',cover:'assets/five-phrases/part-3.webp'},
+    4:{url:'https://www.tiktok.com/@gvadvertising/video/7672153005642337550',cover:'assets/five-phrases/part-4.webp'},
+    5:{url:'https://www.tiktok.com/@gvadvertising/video/7672153395028839693',cover:'assets/five-phrases/part-5.webp'}
   };
   var slots=[].slice.call(document.querySelectorAll('.tt-slot'));
   if(!slots.length)return;
-  var scriptLoaded=false;
-  var embedsBuilt=false;
+  var scriptEl=null;
 
   function handle(url){
     var m=url.match(/@([^\/]+)\/video\//);
@@ -767,13 +780,26 @@ footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rul
     var b=document.createElement('button');
     b.type='button';
     b.className='tt-facade';
-    b.textContent='▶ Play Part '+part+' of 5 on TikTok';
-    b.addEventListener('click',function(){build(slot);loadScript()});
+    b.setAttribute('aria-label','Play Part '+part+' of 5 on TikTok');
+    var img=document.createElement('img');
+    img.src=VIDEOS[part].cover;
+    img.alt='';
+    img.width=480;img.height=640;
+    img.loading='lazy';
+    img.decoding='async';
+    var play=document.createElement('span');
+    play.className='tt-play';
+    play.innerHTML='<span aria-hidden="true">&#9654;</span>';
+    var label=document.createElement('span');
+    label.className='tt-label';
+    label.textContent='Play Part '+part+' of 5 on TikTok';
+    b.appendChild(img);b.appendChild(play);b.appendChild(label);
+    b.addEventListener('click',function(){build(slot)});
     slot.appendChild(b);
   }
   function build(slot){
     var part=slot.getAttribute('data-part');
-    var url=VIDEOS[part];
+    var url=VIDEOS[part]&&VIDEOS[part].url;
     if(!url||slot.querySelector('blockquote'))return;
     var id=videoId(url);
     if(!id)return;
@@ -793,40 +819,22 @@ footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rul
     sec.appendChild(a);
     bq.appendChild(sec);
     slot.appendChild(bq);
+    loadScript();
   }
-  function buildAll(){
-    if(embedsBuilt)return;
-    embedsBuilt=true;
-    slots.forEach(build);
-  }
+  /* embed.js only turns the blockquotes present at execution time into iframes,
+     so it is re-executed for each newly inserted embed. */
   function loadScript(){
-    if(scriptLoaded)return;
-    scriptLoaded=true;
-    var s=document.createElement('script');
-    s.src='https://www.tiktok.com/embed.js';
-    s.async=true;
-    document.body.appendChild(s);
+    if(scriptEl)scriptEl.parentNode.removeChild(scriptEl);
+    scriptEl=document.createElement('script');
+    scriptEl.src='https://www.tiktok.com/embed.js';
+    scriptEl.async=true;
+    document.body.appendChild(scriptEl);
   }
 
   slots.forEach(function(slot){
     var part=slot.getAttribute('data-part');
     if(VIDEOS[part])facade(slot,part);
   });
-
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(!e.isIntersecting)return;
-        io.disconnect();
-        buildAll();
-        loadScript();
-      });
-    },{rootMargin:'200px 0px'});
-    io.observe(document.getElementById('five-phrases'));
-  }else{
-    buildAll();
-    loadScript();
-  }
 })();
 </script>
 
