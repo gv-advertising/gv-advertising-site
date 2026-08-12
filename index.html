@@ -284,6 +284,7 @@ footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rul
 }
 .tt-facade:focus-visible{outline:3px solid var(--red);outline-offset:2px}
 .tt-slot blockquote.tiktok-embed{margin:0!important;max-width:325px}
+.tt-slot .yt-embed{width:100%;max-width:325px;aspect-ratio:9/16;border:2px solid var(--ink);display:block}
 .phrases-foot{
   display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:30px;
 }
@@ -756,17 +757,33 @@ footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rul
 <!-- ============ THE 5 PHRASES — video embeds ============ -->
 <script>
 (function(){
-  /* Single source of truth: Part number -> video URL + poster. Swap these to change the videos. */
+  /* Single source of truth: Part number -> video + poster.
+
+     To swap the whole section from TikTok to YouTube: fill in every `youtube` id below and set
+     PROVIDER='youtube'. Nothing else needs to change — posters, click-to-load, facade labels and
+     layout all read from here.
+
+     Known and accepted TEMPORARILY on the TikTok provider: after a visitor clicks play and the
+     clip ends, TikTok renders its own "Related videos" end screen with third-party clips inside
+     the card. It is not controllable from the embed. The YouTube provider is the cure — it uses
+     rel=0, which limits related videos to our own channel. */
+  var PROVIDER='tiktok'; /* 'tiktok' | 'youtube' */
   var VIDEOS={
-    1:{url:'https://www.tiktok.com/@gvadvertising/video/7672151710441196813',cover:'assets/five-phrases/part-1.webp'},
-    2:{url:'https://www.tiktok.com/@gvadvertising/video/7672152288693177613',cover:'assets/five-phrases/part-2.webp'},
-    3:{url:'https://www.tiktok.com/@gvadvertising/video/7672152636161887501',cover:'assets/five-phrases/part-3.webp'},
-    4:{url:'https://www.tiktok.com/@gvadvertising/video/7672153005642337550',cover:'assets/five-phrases/part-4.webp'},
-    5:{url:'https://www.tiktok.com/@gvadvertising/video/7672153395028839693',cover:'assets/five-phrases/part-5.webp'}
+    1:{tiktok:'https://www.tiktok.com/@gvadvertising/video/7672151710441196813',youtube:'',cover:'assets/five-phrases/part-1.webp'},
+    2:{tiktok:'https://www.tiktok.com/@gvadvertising/video/7672152288693177613',youtube:'',cover:'assets/five-phrases/part-2.webp'},
+    3:{tiktok:'https://www.tiktok.com/@gvadvertising/video/7672152636161887501',youtube:'',cover:'assets/five-phrases/part-3.webp'},
+    4:{tiktok:'https://www.tiktok.com/@gvadvertising/video/7672153005642337550',youtube:'',cover:'assets/five-phrases/part-4.webp'},
+    5:{tiktok:'https://www.tiktok.com/@gvadvertising/video/7672153395028839693',youtube:'',cover:'assets/five-phrases/part-5.webp'}
   };
+  var PROVIDER_NAME={tiktok:'TikTok',youtube:'YouTube'};
   var slots=[].slice.call(document.querySelectorAll('.tt-slot'));
   if(!slots.length)return;
   var scriptEl=null;
+
+  function source(part){
+    var v=VIDEOS[part];
+    return v?v[PROVIDER]:'';
+  }
 
   function handle(url){
     var m=url.match(/@([^\/]+)\/video\//);
@@ -780,7 +797,7 @@ footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rul
     var b=document.createElement('button');
     b.type='button';
     b.className='tt-facade';
-    b.setAttribute('aria-label','Play Part '+part+' of 5 on TikTok');
+    b.setAttribute('aria-label','Play Part '+part+' of 5 on '+PROVIDER_NAME[PROVIDER]);
     var img=document.createElement('img');
     img.src=VIDEOS[part].cover;
     img.alt='';
@@ -792,15 +809,16 @@ footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rul
     play.innerHTML='<span aria-hidden="true">&#9654;</span>';
     var label=document.createElement('span');
     label.className='tt-label';
-    label.textContent='Play Part '+part+' of 5 on TikTok';
+    label.textContent='Play Part '+part+' of 5 on '+PROVIDER_NAME[PROVIDER];
     b.appendChild(img);b.appendChild(play);b.appendChild(label);
     b.addEventListener('click',function(){build(slot)});
     slot.appendChild(b);
   }
   function build(slot){
     var part=slot.getAttribute('data-part');
-    var url=VIDEOS[part]&&VIDEOS[part].url;
-    if(!url||slot.querySelector('blockquote'))return;
+    var url=source(part);
+    if(!url||slot.querySelector('blockquote,iframe'))return;
+    if(PROVIDER==='youtube')return buildYouTube(slot,part,url);
     var id=videoId(url);
     if(!id)return;
     var user=handle(url);
@@ -821,6 +839,18 @@ footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rul
     slot.appendChild(bq);
     loadScript();
   }
+  /* rel=0 keeps YouTube's end screen on our own channel. No embed script needed. */
+  function buildYouTube(slot,part,id){
+    slot.innerHTML='';
+    var f=document.createElement('iframe');
+    f.className='yt-embed';
+    f.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(id)+'?rel=0&modestbranding=1&playsinline=1&autoplay=1';
+    f.title='Part '+part+' of 5';
+    f.allow='accelerometer; autoplay; encrypted-media; picture-in-picture';
+    f.setAttribute('allowfullscreen','');
+    f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
+    slot.appendChild(f);
+  }
   /* embed.js only turns the blockquotes present at execution time into iframes,
      so it is re-executed for each newly inserted embed. */
   function loadScript(){
@@ -833,7 +863,7 @@ footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rul
 
   slots.forEach(function(slot){
     var part=slot.getAttribute('data-part');
-    if(VIDEOS[part])facade(slot,part);
+    if(source(part))facade(slot,part);
   });
 })();
 </script>
