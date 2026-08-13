@@ -757,23 +757,20 @@ footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rul
 <!-- ============ THE 5 PHRASES — video embeds ============ -->
 <script>
 (function(){
-  /* Single source of truth: Part number -> video + poster.
+  /* Single source of truth: Part number -> video + poster. Switching providers is only a matter
+     of changing PROVIDER; posters, click-to-load, facade labels and layout all read from here.
 
-     To swap the whole section from TikTok to YouTube: fill in every `youtube` id below and set
-     PROVIDER='youtube'. Nothing else needs to change — posters, click-to-load, facade labels and
-     layout all read from here.
-
-     Known and accepted TEMPORARILY on the TikTok provider: after a visitor clicks play and the
-     clip ends, TikTok renders its own "Related videos" end screen with third-party clips inside
-     the card. It is not controllable from the embed. The YouTube provider is the cure — it uses
-     rel=0, which limits related videos to our own channel. */
-  var PROVIDER='tiktok'; /* 'tiktok' | 'youtube' */
+     The section runs on YouTube because TikTok's embed renders its own "Related videos" end screen
+     with third-party clips inside the card once a clip finishes, and that is not controllable from
+     the embed. YouTube's rel=0 keeps related videos on our own channel (UCCyuO6uD05kQDE42MS29GhA).
+     The TikTok URLs are kept as a working fallback, not as the active provider. */
+  var PROVIDER='youtube'; /* 'tiktok' | 'youtube' */
   var VIDEOS={
-    1:{tiktok:'https://www.tiktok.com/@gvadvertising/video/7672151710441196813',youtube:'',cover:'assets/five-phrases/part-1.webp'},
-    2:{tiktok:'https://www.tiktok.com/@gvadvertising/video/7672152288693177613',youtube:'',cover:'assets/five-phrases/part-2.webp'},
-    3:{tiktok:'https://www.tiktok.com/@gvadvertising/video/7672152636161887501',youtube:'',cover:'assets/five-phrases/part-3.webp'},
-    4:{tiktok:'https://www.tiktok.com/@gvadvertising/video/7672153005642337550',youtube:'',cover:'assets/five-phrases/part-4.webp'},
-    5:{tiktok:'https://www.tiktok.com/@gvadvertising/video/7672153395028839693',youtube:'',cover:'assets/five-phrases/part-5.webp'}
+    1:{tiktok:'https://www.tiktok.com/@gvadvertising/video/7672151710441196813',youtube:'Q4DXZ7KTZfc',cover:'assets/five-phrases/part-1.webp'},
+    2:{tiktok:'https://www.tiktok.com/@gvadvertising/video/7672152288693177613',youtube:'xWj5eoc1hrY',cover:'assets/five-phrases/part-2.webp'},
+    3:{tiktok:'https://www.tiktok.com/@gvadvertising/video/7672152636161887501',youtube:'d9XkTyI4xjE',cover:'assets/five-phrases/part-3.webp'},
+    4:{tiktok:'https://www.tiktok.com/@gvadvertising/video/7672153005642337550',youtube:'Ji2Qa1FiR4o',cover:'assets/five-phrases/part-4.webp'},
+    5:{tiktok:'https://www.tiktok.com/@gvadvertising/video/7672153395028839693',youtube:'-wVdjdEQw4A',cover:'assets/five-phrases/part-5.webp'}
   };
   var PROVIDER_NAME={tiktok:'TikTok',youtube:'YouTube'};
   var slots=[].slice.call(document.querySelectorAll('.tt-slot'));
