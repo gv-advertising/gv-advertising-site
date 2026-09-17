@@ -89,6 +89,10 @@ h1,h2,h3,.display{font-family:'Big Shoulders Display',Impact,sans-serif;line-hei
 .filebar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
 .brand{font-family:'Big Shoulders Display',sans-serif;font-size:30px;font-weight:900;letter-spacing:.02em;text-transform:uppercase}
 .brand span{color:var(--red)}
+.nav{display:flex;gap:6px 18px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.09em;text-transform:uppercase}
+.nav a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;white-space:nowrap}
+.nav a:hover{color:var(--ink);border-bottom-color:var(--red)}
+.nav a[aria-current="page"]{color:var(--ink);font-weight:600;border-bottom-color:var(--red)}
 .filemeta{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft)}
 .btn{
   display:inline-block;background:var(--ink);color:var(--paper);
@@ -327,6 +331,10 @@ footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rul
 <div class="filebar">
   <div class="wrap">
     <div class="brand">GV<span>/</span>ADVERTISING</div>
+    <nav class="nav" aria-label="Practice areas">
+      <a href="/" aria-current="page">Telehealth &amp; Med Spas</a>
+      <a href="/home-health-hospice">Home Health &amp; Hospice</a>
+    </nav>
     <div class="filemeta">File No. GVA-2026 &nbsp;·&nbsp; Regulated Health Marketing</div>
     <a class="btn" href="#contact">Book a compliance review</a>
   </div>
