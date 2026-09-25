@@ -575,5 +575,15 @@ footer .backlink{margin-top:14px;font-size:11.5px}
 </footer>
 </div>
 
+<script>
+(function(){
+  var bar=document.querySelector('.filebar');
+  if(!bar)return;
+  function pad(){document.documentElement.style.scrollPaddingTop=(bar.offsetHeight+12)+'px'}
+  pad();
+  addEventListener('resize',pad);
+})();
+</script>
+
 </body>
 </html>
