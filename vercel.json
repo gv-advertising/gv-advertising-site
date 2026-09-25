@@ -6,6 +6,11 @@
       "has": [{ "type": "host", "value": "agencies.gv-adv.com" }],
       "destination": "/home-health-hospice",
       "permanent": false
+    },
+    {
+      "source": "/glp1-marketing",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }

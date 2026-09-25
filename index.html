@@ -7,26 +7,122 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "@id": "https://gv-adv.com/#organization",
-  "name": "GV Advertising",
-  "url": "https://gv-adv.com",
-  "email": "gary@gv-adv.com",
-  "telephone": "+1-323-247-3167",
-  "description": "GV Advertising builds paid acquisition for telehealth practices, med spas and GLP-1 clinics — funnels, Meta ads and lead automation written to survive FDA, FTC and platform review.",
-  "founder": { "@type": "Person", "name": "Gary Villalobos" },
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "1125 E Broadway, PMB 1034",
-    "addressLocality": "Glendale",
-    "addressRegion": "CA",
-    "postalCode": "91205",
-    "addressCountry": "US"
-  },
-  "areaServed": { "@type": "Country", "name": "United States" },
-  "knowsAbout": ["Healthcare marketing compliance","FDA advertising claim review","FTC Health Breach Notification Rule","GLP-1 and compounded semaglutide marketing","Meta advertising policy for health brands","Telehealth patient acquisition","Med spa marketing","LegitScript certification marketing requirements"],
-  "serviceType": "Regulated health marketing and compliance-first paid acquisition",
-  "priceRange": "$950-$8000"
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://gv-adv.com/#organization",
+      "name": "GV Advertising",
+      "url": "https://gv-adv.com",
+      "email": "gary@gv-adv.com",
+      "telephone": "+1-323-247-3167",
+      "description": "GV Advertising builds paid acquisition for telehealth practices, med spas and GLP-1 clinics — funnels, Meta ads and lead automation written to survive FDA, FTC and platform review.",
+      "founder": {
+        "@type": "Person",
+        "name": "Gary Villalobos"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1125 E Broadway, PMB 1034",
+        "addressLocality": "Glendale",
+        "addressRegion": "CA",
+        "postalCode": "91205",
+        "addressCountry": "US"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "knowsAbout": [
+        "Healthcare marketing compliance",
+        "FDA advertising claim review",
+        "FTC Health Breach Notification Rule",
+        "GLP-1 and compounded semaglutide marketing",
+        "Meta advertising policy for health brands",
+        "Telehealth patient acquisition",
+        "Med spa marketing",
+        "LegitScript certification marketing requirements"
+      ],
+      "serviceType": "Regulated health marketing and compliance-first paid acquisition",
+      "priceRange": "$950-$8000"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://gv-adv.com/#glp1-marketing",
+      "name": "GLP-1 Marketing Agency for Telehealth Clinics & Med Spas",
+      "url": "https://gv-adv.com/",
+      "serviceType": "GLP-1 telehealth marketing",
+      "description": "Compliance-first GLP-1 marketing for telehealth clinics and med spas. Ads, landing pages and redlines built to pass FDA, FTC, Meta and Google review.",
+      "areaServed": "US",
+      "audience": {
+        "@type": "BusinessAudience",
+        "name": "Telehealth clinics, med spas and DTC brands offering compounded semaglutide or tirzepatide"
+      },
+      "offers": {
+        "@type": "Offer",
+        "name": "Compliance Redline",
+        "price": "950",
+        "priceCurrency": "USD",
+        "url": "https://gv-adv.com/#pricing"
+      },
+      "provider": {
+        "@id": "https://gv-adv.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://gv-adv.com/#glp1-faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can you get a restricted Meta or Google ad account running again?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Often, yes — but the appeal is the smaller half of the job. Accounts get restricted because the copy, the landing page or the tracking tripped a health policy. We fix the asset that caused the flag first, document the change, then file the appeal with the corrected creative attached. If the account is unrecoverable we rebuild on a clean structure and carry the compliant assets over. We walk through the specific triggers at https://gv-adv.com/meta-ad-account-restricted-weight-loss."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you write the ads or review the ones we already have?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both. The Compliance Redline reviews what you are running today and marks every flagged line against the rule it breaks. The retainers add creative written from scratch to pass review, plus unlimited redline of anything your team writes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this legal advice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. GV Advertising is a marketing firm. We build inside the constraints regulators and ad platforms have already published, avoid the enforcement triggers documented in FDA warning letters and FTC actions, and write down why. Your counsel signs off on legal questions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can we say our compounded semaglutide has the same active ingredient as Wegovy or Ozempic?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We do not write it. That comparison is the most-cited sentence in the 2026 FDA warning letters to telehealth and compounding marketers, and it drew a letter to Hims & Hers in September 2025. The convenience, price and speed angles that actually drive the click do not need it. We break that letter down line by line at https://gv-adv.com/fda-warning-letter-glp1-claims."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do you keep pixels off the intake page?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because a standard pixel on a health intake form sends health-adjacent data to an ad platform — the exact conduct the FTC fined BetterHelp ($7.8M) and GoodRx ($1.5M) for under the Health Breach Notification Rule. We track conversions server-side with health-identifying fields stripped before anything is sent. See our note on pixels and intake pages at https://gv-adv.com/pixel-intake-page-ftc-goodrx-betterhelp."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How fast does the Compliance Redline ship?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Five business days from access. You receive a redlined document covering up to three pages and ten live ads; every flagged line cites the rule and shows the corrected version beside it. The $950 is credited toward month one if you start a retainer."
+          }
+        }
+      ]
+    }
+  ]
 }
 </script>  
 <meta name="google-site-verification" content="T8fJf_1aDiRRDVRzgf0Yz0fezoGOfSqoI_fiWjMunCM" />  
@@ -232,6 +328,7 @@ summary::-webkit-details-marker{display:none}
 summary::after{content:"+";font-family:'IBM Plex Mono',monospace;color:var(--red);font-size:20px}
 details[open] summary::after{content:"–"}
 details p{margin-top:12px;color:var(--ink-soft);font-size:16.5px;max-width:74ch}
+details p a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px}
 
 /* ---------- cta ---------- */
 .cta{background:var(--ink);color:var(--paper);border-bottom:none}
@@ -333,7 +430,6 @@ footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rul
     <div class="brand">GV<span>/</span>ADVERTISING</div>
     <nav class="nav" aria-label="Practice areas">
       <a href="/" aria-current="page">Telehealth &amp; Med Spas</a>
-      <a href="/glp1-marketing">GLP-1 Marketing</a>
       <a href="/home-health-hospice">Home Health &amp; Hospice</a>
     </nav>
     <div class="filemeta">File No. GVA-2026 &nbsp;·&nbsp; Regulated Health Marketing</div>
@@ -533,7 +629,7 @@ footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rul
 <section>
   <div class="eyebrow">Scope of services</div>
   <h2>What I actually build.</h2>
-  <p class="lead">Not strategy decks. Live assets: creative that runs, funnels that convert, tracking that does not put you in a filing. Running a compounded GLP-1 program? See the dedicated <a href="/glp1-marketing" style="color:var(--ink);text-decoration:none;border-bottom:1px solid var(--red)">GLP-1 marketing services</a>.</p>
+  <p class="lead">Not strategy decks. Live assets: creative that runs, funnels that convert, tracking that does not put you in a filing.</p>
   <div class="grid2">
     <div class="cell">
       <span class="num">A</span>
@@ -717,6 +813,40 @@ footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rul
     <details>
       <summary>What do you need from me to start?</summary>
       <p>Access to your ad account and analytics, whatever creative you have running, and one person who can answer clinical questions when a script needs a factual check. That is it.</p>
+    </details>
+  </div>
+</section>
+</div>
+
+<!-- ============ GLP-1 FAQ ============ -->
+<div class="wrap">
+<section id="glp1-faq">
+  <div class="eyebrow">Anticipated objections — GLP-1 programs</div>
+  <h2>GLP-1 marketing questions.</h2>
+  <div class="faq">
+    <details>
+      <summary>Can you get a restricted Meta or Google ad account running again?</summary>
+      <p>Often, yes — but the appeal is the smaller half of the job. Accounts get restricted because the copy, the landing page or the tracking tripped a health policy. We fix the asset that caused the flag first, document the change, then file the appeal with the corrected creative attached. If the account is unrecoverable we rebuild on a clean structure and carry the compliant assets over. We walk through the specific triggers in <a href="/meta-ad-account-restricted-weight-loss">why weight-loss ad accounts get restricted</a>.</p>
+    </details>
+    <details>
+      <summary>Do you write the ads or review the ones we already have?</summary>
+      <p>Both. The Compliance Redline reviews what you are running today and marks every flagged line against the rule it breaks. The retainers add creative written from scratch to pass review, plus unlimited redline of anything your team writes.</p>
+    </details>
+    <details>
+      <summary>Is this legal advice?</summary>
+      <p>No. GV Advertising is a marketing firm. We build inside the constraints regulators and ad platforms have already published, avoid the enforcement triggers documented in FDA warning letters and FTC actions, and write down why. Your counsel signs off on legal questions.</p>
+    </details>
+    <details>
+      <summary>Can we say our compounded semaglutide has the same active ingredient as Wegovy or Ozempic?</summary>
+      <p>We do not write it. That comparison is the most-cited sentence in the 2026 FDA warning letters to telehealth and compounding marketers, and it drew a letter to Hims &amp; Hers in September 2025. The convenience, price and speed angles that actually drive the click do not need it. We break that letter down line by line in <a href="/fda-warning-letter-glp1-claims">two sentences, one FDA warning letter</a>.</p>
+    </details>
+    <details>
+      <summary>Why do you keep pixels off the intake page?</summary>
+      <p>Because a standard pixel on a health intake form sends health-adjacent data to an ad platform — the exact conduct the FTC fined BetterHelp ($7.8M) and GoodRx ($1.5M) for under the Health Breach Notification Rule. We track conversions server-side with health-identifying fields stripped before anything is sent. See <a href="/pixel-intake-page-ftc-goodrx-betterhelp">our note on pixels and intake pages</a>.</p>
+    </details>
+    <details>
+      <summary>How fast does the Compliance Redline ship?</summary>
+      <p>Five business days from access. You receive a redlined document covering up to three pages and ten live ads; every flagged line cites the rule and shows the corrected version beside it. The $950 is credited toward month one if you start a retainer.</p>
     </details>
   </div>
 </section>
