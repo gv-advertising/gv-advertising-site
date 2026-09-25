@@ -39,6 +39,9 @@ body{
   text-decoration:none;color:var(--ink);
 }
 .logo span{color:var(--flag)}
+.nav{display:flex;gap:6px 18px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.09em;text-transform:uppercase}
+.nav a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;white-space:nowrap}
+.nav a:hover{color:var(--ink);border-bottom-color:var(--flag)}
 .file-no{
   font-family:'IBM Plex Mono',monospace;font-size:11px;
   letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);
@@ -174,6 +177,11 @@ footer{border-top:1px solid var(--rule);padding:30px 0 46px}
 <header class="masthead">
   <div class="wrap">
     <a class="logo" href="/">GV<span>/</span>ADVERTISING</a>
+    <nav class="nav" aria-label="Practice areas">
+      <a href="/">Telehealth &amp; Med Spas</a>
+      <a href="/glp1-marketing">GLP-1 Marketing</a>
+      <a href="/home-health-hospice">Home Health &amp; Hospice</a>
+    </nav>
     <div class="file-no">File No. GVA-2026 &nbsp;·&nbsp; Regulated health marketing</div>
   </div>
 </header>
@@ -260,6 +268,7 @@ footer{border-top:1px solid var(--rule);padding:30px 0 46px}
     <p>Thirty minutes, no charge, no obligation. You leave with a written list of the lines in your current marketing that would draw a flag — and why. If you never hire me, you still fix the lines.</p>
     <a class="btn" href="https://cal.com/gv-advertising/compliance-review">Book the compliance review</a>
     <div class="cta-mail"><a href="mailto:gary@gv-adv.com?subject=Compliance%20review%20request">gary@gv-adv.com</a></div>
+    <div class="cta-mail">Selling compounded GLP-1s? See <a href="/glp1-marketing">GLP-1 marketing for telehealth clinics &amp; med spas</a>.</div>
   </div>
 </section>
 
